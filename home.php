@@ -7,13 +7,15 @@
     <title>InterLink</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbs5KK9e0lGWtTTOlJgeDE59gPGbomF8/xFi9v3eE3OIxT9n2DtN5o9RUoysl2Q5" crossorigin="anonymous">
+
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <link rel="stylesheet" href="../dist/jquery.flipster.min.css">
 
     <script src="jquery/jquery.min.js "></script>
     <script src="../dist/jquery.flipster.min.js"></script>
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+  
+   
 </head>
 
 <body>
@@ -64,28 +66,22 @@
     </nav>
 
     <div id="myModal" class="modal">
-        
         <div class="modal-content">
             <div class="pageCenter">
-                
-                
                 <div class="container" id="container">
                     <div class="close-span">
                         <span class="close" onclick="closeModal()">&times;</span>
                     </div>
-                    
                     <form class="sign-in-container" action="form.php" method="post">
                         <h1>Sign In or Register</h1>
-                        <div class="social-icons">
-                            <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
-                        </div>
-                        <span class="form-span">or use your email and password</span>
+                        <!-- Your form fields and buttons -->
                         <input type="text" placeholder="Email" name="email">
                         <input type="password" placeholder="Password" id="passw" name="passw">
                         <a href="#">→ Forgot Your Password? ←</a>
-                        <button>Sign In</button>
-                        <span class="form-span">not have account yet?</span>
-                        <button>Sign Up</button>
+                        <button name="login" type="submit">Sign In</button>
+                        <span class="form-span">Don't have an account yet?</span>
+                        <!-- Added registration field -->
+                        <button name="register" type="submit">Sign Up</button>
                     </form>
                 </div>
                 <div class="password-validator">
@@ -97,20 +93,21 @@
                                 <li id="capital" class="invalid">At least one capital letter</li>
                                 <li id="number" class="invalid">At least one number</li>
                                 <li id="length" class="invalid">Be at least 8 characters</li>
-                                <li id="space" class="invalid">Atleast one [~,!,@,#,$,%,^,&,*,-,=,.,;,']</li>
+                                <li id="space" class="invalid">At least one [~,!,@,#,$,%,^,&,*,-,=,.,;,']</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            
         </div>
     </div>
+</div>
     <div class="directory">
         <div><a href="home.html">Recommended for you ></a></div>
 
         
     </div>
+    
     <div id="carousel">
         <ul class="flip-items">
             <li>
@@ -327,181 +324,39 @@
 
 
     <div class="products">
-
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/final_fantasy_xvi_ffxvi_deluxe.jpg); background-size: 100%; height: 280px;">                
-            </div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>Final Fantasy XVI (FFXVI) Deluxe PS5 - R3/Asia</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 6,000</h2>
-                </div>
-            </div>
+    
+        <?php
+        include 'products.php';
+        foreach ($products as $product) {
+            ?>
+            <div class="col-md-4 mb-4">
+    <div class="card custom-card">
+        <img src="assets/<?php echo strtolower(str_replace(' ', '_', $product['product_name'])); ?>.jpg" class="card-img-top" alt="Product Image" style="height: 200px; width: 200px;">
+        <div class="card-body">
+            <h5 class="card-title"><?php echo $product['product_name']; ?></h5>
+            <p class="card-text"><?php echo $product['description']; ?></p>
         </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/ps5.jpg); background-size: 200%; height: 280px;">
-            </div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/baldurs_gate_3.jpg); background-size: 100%; height: 280px;">
-            </div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/kaworu_nagisa_eva_1.jpg); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/evangelion_shinji_ikari_plus_c.jpg); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/neon_genesis_evangelion_unit_1.jpg); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/sale_evangelion_keyboard.jpg); background-size: 200% ; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/evangelion_shinji_ikari_plus_c.jpg); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/neon_genesis_evangelion_unit_1.jpg); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(assets/sale_evangelion_keyboard.jpg); background-size: 200% ; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(); background-size: 200% ; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 700</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 600</h2>
-                </div>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="content-image" style="background-image: url(); background-size: 100%; height: 280px;"></div>
-            <div class="info-container">
-                <div class="content-title">
-                    <h1>PRODUCT</h1>
-                </div>
-                <div class="content-seller">
-                    <h2>PHP 500</h2>
-                </div>
-            </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Seller ID: <?php echo $product['seller']; ?></li>
+            <li class="list-group-item">Price: $<?php echo $product['price']; ?></li>
+            <li class="list-group-item">Quantity: <?php echo $product['quantity']; ?></li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Add to Cart</a>
         </div>
     </div>
+</div>
+
+<?php } ?>
+
     <svg>
         <filter id="bg-filter">
             <feTurbulence type="fractalNoise" baseFrequency="7.5"/>
         </filter>
     </svg>
+  
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-pzjw8V+Y1E1z0ZZxC0jwkqbsLoeJ48PTnYf5UK+9CRxlFi1jNHDvD6IyXipTiXHp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy8BEAHjIc15Lw7Wqj4J8NnRSqzNBZD2N" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </body>
 
