@@ -103,7 +103,9 @@
                         
                         <span class="form-span">or use your email and password</span>
 
-                        
+                        <?php if(isset($_GET['error'])) { ?>
+                            <p class="error"> <?php echo $_GET['error']; ?></p>
+                        <?php } ?>
 
                         <!-- Your form fields and buttons -->
                         <input type="text" placeholder="Email" name="email">

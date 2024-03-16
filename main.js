@@ -65,3 +65,33 @@ $(document).ready(function() {
 
 });
 
+$(function(){
+    var regExp = /^[a-zA-Z0-9._%+-]+@ciit\.edu\.ph$/;
+
+    $('[type="email"]').on('keyup', function() {
+        $('.message').hide();
+        regExp.test($(this).val()) ? $('.message.success').show() : $('.message.error').show();
+    });
+
+    $('form').submit(function(event) {
+        var emailInput = $(this).find('input[name="email"]');
+        if (!regExp.test(emailInput.val())) {
+            event.preventDefault(); 
+            alert('Please enter your CIIT email');
+            emailInput.focus();
+        }
+    });
+});
+
+function start() {
+    gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+            client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+        });
+        });
+    }
+    
+    $('#googleSignIn').click(function() {
+        auth2.grantOfflineAccess().then(signInCallback);
+    });
+
