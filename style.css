@@ -393,8 +393,8 @@
   }
   h1, .card-title {
     font-size: 16px;
-    font-family: Helvetica;
-    color: rgb(53, 53, 53);
+    font-weight: 800;
+    color: rgb(0, 0, 0);
     margin: 5px;
   }
   h2, .card-text {
@@ -462,21 +462,26 @@
     padding-left: 5vw;
   }
   .details-title{
+    font-weight: 800;
     font-size: 40px;
-    font-weight: 400;
   }
   .details-price{
     margin-top: 10px;
     font-size: 25px;
   }
+  .caption-detail{
+    
+    margin-top: 18px;
+    font-size: 20px;
+  }
 
   .details-desc{
-    padding: 10px;
+    padding-left: 10px;
     margin-top: 10px;
     font-size: 15px;
     height: 110px;
     width: 25vw;
-    border: 1px solid black;
+
   }
   .details-date{
     position: relative;
@@ -502,10 +507,12 @@
     margin: 20px;
   }
   .chat-button button{
+    width: 18vw;
     border: 2px solid black;
   }
   .seller-button{
-    margin: 20px;
+    
+    margin-top: 25px;
   }
   .seller-button button{
     border: 2px solid black;
@@ -832,6 +839,30 @@
     margin-bottom: 0;
   }
 
+/*************************88 about us page ****************/
+  .container-interlink{
+    margin: 70px;
+    margin-top: 18vh;
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
+
+  .about-us{
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .customer-support{
+    margin-top: 50px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .about-interlink p{
+    text-align: justify;
+      text-indent: 50px;
+    
+  }
+/**************************** footer ***********************/
   .footer{
     width: 100%;
     position: relative;
