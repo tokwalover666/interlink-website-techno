@@ -161,18 +161,26 @@
             ?>
         <div class="product-box">
             <div class="product-image">
+                <div class="image-container-inside">
                     <img src="assets/<?php echo strtolower(str_replace(' ', '_', $product['product_name'])); ?>.jpg" alt="Product Image">
                 </div>
-            
+            </div>
             <div class="details-container">
-                <h1><?php echo $product['product_name']; ?></h1>
-                <div>Price: ₱<?php echo $product['price']; ?></div>
-                <div><?php echo $product['description']; ?></div>
-                <div>Posted: </div>
-                <div>By: <?php echo $product['seller']; ?></div>
-                <div><a href="#">Chat</a></div>
-                <div><a href="#">Seller Profile</a></div>
-                <div>Reviews</div>
+                <div class="details-title"><?php echo $product['product_name']; ?></div>
+                <div class="details-price">Price: ₱<?php echo $product['price']; ?></div>
+                <div class="details-desc"><?php echo $product['description']; ?></div>
+                <div class="details-date">Posted: <div class="details-right">1 week ago</div></div>
+                <div class="details-seller">By: <div class="details-right"><?php echo $product['seller']; ?></div></div>
+                <div class="details-button">
+                    <div class="chat-button">
+                        <button>Chat</button>
+                    </div>
+                    <div class="seller-button">
+                    <button>Seller</button>
+                    </div>
+                </div>
+                
+                <div class="product-reviews" >Reviews</div>
             </div>
         </div>
             <?php
