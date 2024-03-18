@@ -359,10 +359,14 @@ margin: 70px 170px;
     flex-wrap: wrap;
 }
 .custom-card {
-  margin: 0.75rem; 
-  border: 1px solid #020303; 
+  width: 300px;
+  flex-wrap: wrap;
+  border: 2px solid rgb(0, 0, 0);
+ background-color: rgba(255, 255, 255, 0.7); 
+  height: 400px;
+  margin: 7px;
 }
-.content-container, .custom-card{
+.content-container{
     width: 300px;
     flex-wrap: wrap;
     border: 2px solid rgb(0, 0, 0);
@@ -381,7 +385,7 @@ margin: 70px 170px;
 .content-title, .content-price, .content-seller {
   margin: 5px;
 }
-h1, .card-body {
+h1, .card-title {
   font-size: 16px;
   font-family: Helvetica;
   color: rgb(53, 53, 53);
