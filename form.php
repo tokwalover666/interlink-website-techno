@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Database connection
 $conn = new mysqli('localhost', 'root', '', 'interlink');
 if ($conn->connect_error) {
@@ -55,21 +55,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if ($password == $dbPassword) {
+            $_SESSION['email'] = $email;
             header ("Location: profile.php?status=Login%20successful!");
             exit;
             
         } else {
             echo "Invalid email or password!";
-            header ("Location: index.php?error=Invalid email or password!");
+            header ("Location: login.php?error=Invalid email or password!");
         }
 
         if (empty($email)) {
-            header ("Location: index.php?error=Email is empty!");
+            header ("Location: login.php?error=Email is empty!");
 
             
         } else if (empty($password)) {
             echo "Invalid email or password!";
-            header ("Location: index.php?error=Password is empty!");
+            header ("Location: login.php?error=Password is empty!");
         }
 
         $stmt->close();
