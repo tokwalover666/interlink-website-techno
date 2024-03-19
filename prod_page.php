@@ -87,7 +87,7 @@
                         <li><a href="add.php" class="user-hover-list">Post item</a></li>
                         <li><a href="" class="user-hover-list">Saved</a></li>
                         <li><a href="aboutUs.html" class="user-hover-list">Help Center</a></li>
-                        <li><a href="" class="user-hover-list">Settings</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </a>
             </div>
@@ -163,7 +163,9 @@
 
         // Display product details if found
         if ($product) {
+            
             ?>
+            
         <div class="product-box">
             <div class="product-image">
                 <div class="image-container-inside">

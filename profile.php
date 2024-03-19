@@ -7,7 +7,22 @@ if (!isset($_SESSION['email'])) {
 
 // Retrieve email from session
 $email = $_SESSION['email'];
+
+$conn = new mysqli('localhost', 'root', '', 'interlink');
+if ($conn->connect_error) {
+    die('Connection Failed : ' . $conn->connect_error);
+}
+
+// Retrieve products associated with the logged-in user
+$stmt = $conn->prepare("SELECT * FROM products WHERE seller = ?");
+$stmt->bind_param("s", $email);
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -54,15 +69,37 @@ $email = $_SESSION['email'];
                             <li><a href="add.php" class="user-hover-list">Post item</a></li>
                             <li><a href="" class="user-hover-list">Saved</a></li>
                             <li><a href="aboutUs.html" class="user-hover-list">Help Center</a></li>
-                            <li><a href="" class="user-hover-list">Settings</a></li>
+                            <li><a href="logout.php">Logout</a></li>
                         </ul>
                     </a>
                 </div>
         </div>
     </nav>
+    <div class="profile-container">
+        <h1>Welcome, <?php echo $email ?>!</h1>
+        
+        <div>LISTINGS</div>
+        <?php while ($product = $result->fetch_assoc()) { ?>
 
-<h1>Welcome, <?php echo $email ?>!</h1>
-<a href="logout.php">Logout</a>
+            </div>
+            <div class="user-listings">
+                <a href="prod_page.php?id=<?php echo $product['product_id']; ?>" class="product-link-page">
+                <img src="assets/<?php echo strtolower(str_replace(' ', '_', $product['product_name'])); ?>.jpg" class="card-img-top" alt="Product Image" style="width: 100%; 
+                height: 280px; 
+                object-fit: cover;
+                object-position: 25% 25%;  border-bottom: 2px solid black; ">
+                <div class="user-card-body">
+                    <h1 class="card-title"><?php echo $product['product_name']; ?></h1>
+                    <h2> Price: ₱<?php echo $product['price']; ?></h2>
+                    <p class="card-text"><?php echo $product['description']; ?></p>
+                </div>
+
+        
+                </a>
+    </div>
+        <?php } ?>
+
+
 
     </div>
         <svg>

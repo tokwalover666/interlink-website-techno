@@ -165,6 +165,32 @@
     left: 50%;
     transform: translateX(-50%);
   }
+
+/***********************8 profile ***************/
+.profile-container{
+  padding-top: 50px;
+text-align: center;
+
+}
+
+.user-listings {
+
+  width: 300px;
+  flex-wrap: wrap;
+  border: 2px solid rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0.7); 
+  height: 360px;
+  margin: 7px;
+
+}
+.user-card-body{
+  padding-left: 20px;
+}
+
+
+
+
+
   /*search bar*/
 
   input {
@@ -364,7 +390,7 @@
       padding-top: 10px;
       flex-wrap: wrap;
   }
-  .custom-card {
+  .custom-card{
     width: 300px;
     flex-wrap: wrap;
     border: 2px solid rgb(0, 0, 0);
@@ -412,6 +438,8 @@
   .product-link-page {
     text-decoration: none;
   }
+
+
 
 
   /****************** product details******************** */

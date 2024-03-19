@@ -82,7 +82,7 @@
                         <li><a href="add.php" class="user-hover-list">Post item</a></li>
                         <li><a href="" class="user-hover-list">Saved</a></li>
                         <li><a href="aboutUs.html" class="user-hover-list">Help Center</a></li>
-                        <li><a href="" class="user-hover-list">Settings</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </a>
             </div>
@@ -231,7 +231,7 @@
             ?>
             <div class="col-md-4 mb-4">
     <div class="card custom-card">
-        <a class="product-link-page" href="prod_page.php?id=<?php echo $product['product_id']; ?>" target="_blank">
+        <a class="product-link-page" href="prod_page.php?id=<?php echo $product['product_id']; ?>">
         <img src="assets/<?php echo strtolower(str_replace(' ', '_', $product['product_name'])); ?>.jpg" class="card-img-top" alt="Product Image" style="width: 100%; 
   height: 280px; 
   object-fit: cover;
