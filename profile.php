@@ -93,55 +93,13 @@
             </div>
         </div>
     </div>
-    
-    <div class="container-interlink">
-        <div class="about-us">
-            About Us
-        </div>
-        <div class="about-interlink">
-            <p>InterLink is a specialized online marketplace designed exclusively for the CIIT community, focusing on the passions and interests of CIITzens in video games, art-tech items, merchandise, and electronics. Our platform provides a dedicated space for buying, selling, and renting a diverse range of products that align with the digital and creative inclinations of our community members. </p>
-            <div class="container-help-center">
-                <div class="customer-support">
-                    Customer Support
-                </div>
-                <div class="contact-interlink">
-                    <p>
-                    Feel free to email us at interlink.help@gmail.com for concerns.
-                </p>
-                </div>
-                
-            </div>
-            <div class="faks">
-                <div class="about-us" >
-                    Frequently Asked Questions (FAQs)
-                </div>
-                <p>
-                    <b>How do I buy products on InterLink?</b><br>
-                    To buy products, you can click the item you're interested in and send a direct message to the seller. From there, you can discuss details, negotiate prices, and arrange for the transaction.
-                </p>
-                <p>
-                    <b>How do I sell products on InterLink?</b><br>
-                    Simply click the plus button on our website to add your items, providing details such as price, description, and images. Interested buyers can then send you messages to inquire about the product and discuss further details.
+    <?php
+// Retrieve email from URL query string or set default value
+$email = isset($_GET['email']) ? $_GET['email'] : 'Unknown User';
 
-                </p>
-                <p>
-                    <b>Can I rent items on InterLink?</b><br>
-                    Yes, InterLink offers the option for sellers to list items available for rent. If a product is available for rent, it will be indicated on the product page. You can then send a message to the seller and discuss rental terms and arrangements.
-                </p>
-                <p>
-                    <b>How do I contact a seller on InterLink?</b><br>
-                    To contact a seller on InterLink, simply navigate to the product listing you're interested in and click on the "Message Seller" button. 
-                </p>
-                <p>
-                    <b>How do I report an issue or concern on InterLink?</b><br>
-                    If you encounter any issues or have concerns in our website, please don't hesitate to reach out to our customer support team. You can send an email to interlink.help@gmail.com detailing your issue, and our team will assist you as soon as possible.
-                </p>
-                <p>
-                    <b>What should I do if I encounter a scam on InterLink?</b><br>
-                    If you suspect that you've been scammed or encountered fraudulent activity on InterLink, please report it to our customer support team immediately. You can reach us via email at interlink.help@gmail.com and provide details of the incident, including the seller's info, the product involved, and any communication or evidence related to the scam.
-                </p>
-        </div>
-        </div>
+// Display welcome message
+echo "<h1>Welcome, $email!</h1>";
+?>
 
     </div>
         <svg>

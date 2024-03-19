@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 if ($stmt->execute()) {
                     echo "Registered successfully!";
-                    header ("Location: index.php?=Login successful!");
+                    header ("Location: profile.html?=Registered successful!");
                 } else {
                     echo "Error during registration: " . $stmt->error;
                     header ("Location: index.php?error=Error during registration!");
@@ -55,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->fetch();
 
         if ($password == $dbPassword) {
-            header ("Location: index.php?=Login successful!");
-            echo "Login successful!";
+            header ("Location: profile.php?status=Login%20successful!");
+            exit;
             
         } else {
             echo "Invalid email or password!";
