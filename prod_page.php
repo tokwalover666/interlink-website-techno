@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.6/jquery.flipster.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.flipster/1.1.6/jquery.flipster.min.js"></script>
 
+    <script src="https://kit.fontawesome.com/d8bd919f93.js" crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -78,6 +80,7 @@
                     <ul class="dropdown-nav">
                         <li><a href="" class="user-hover-list">User</a></li>
                         <li><a href="" class="user-hover-list">Messages</a></li>
+                        <li><a href="" class="user-hover-list">Groups</a></li>
                         <li><a href="home.php" class="user-hover-list">Explore</a></li>
                         <li><a href="add.html" class="user-hover-list">Post item</a></li>
                         <li><a href="" class="user-hover-list">Saved</a></li>
@@ -174,7 +177,7 @@
                 <div class="details-seller">By: <div class="details-right"><?php echo $product['seller']; ?></div></div>
                 <div class="details-button">
                     <div class="chat-button">
-                        <button>Chat</button>
+                        <button onclick="openForm()">Message</button>
                     </div>
                     <div class="seller-button">
                     <a href="#">
@@ -201,6 +204,20 @@
     ?>
     </div>
 
+    <button class="open-button"onclick="openForm()">Msg</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container-chat">
+   <i class="fa-solid fa-chalkboard-user"></i> <h3>Seller: <?php echo $product['seller']; ?></h3>
+
+    <label for="msg">Message</label>
+    <textarea placeholder="Still available?.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
     <svg>
         <filter id="bg-filter">
             <feTurbulence type="fractalNoise" baseFrequency="7.5"/>
@@ -212,7 +229,15 @@
             <span><data>InterLink</data> // ©2024 All rights reserved.</span>
         </div>
     </footer>
+    <script>
+    function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    }
 
+    function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    }
+    </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-pzjw8V+Y1E1z0ZZxC0jwkqbsLoeJ48PTnYf5UK+9CRxlFi1jNHDvD6IyXipTiXHp" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy8BEAHjIc15Lw7Wqj4J8NnRSqzNBZD2N" crossorigin="anonymous"></script>

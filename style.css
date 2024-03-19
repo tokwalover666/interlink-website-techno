@@ -12,7 +12,7 @@
       font-size: 15px;
       font-family: Sophisto;
       color: rgb(0, 0, 0);
-
+      overflow-x: hidden;
   }
   body {	
     &::before, &::after {
@@ -112,7 +112,7 @@
       top: 50px;
       border: 2px solid black;
       background-color: rgb(255, 255, 255);
-      height: 220px;
+      height: 240px;
       a {
         margin-right: 20px;
 
@@ -462,6 +462,7 @@
     padding-left: 5vw;
   }
   .details-title{
+    width: 400px;
     font-weight: 800;
     font-size: 40px;
   }
@@ -509,6 +510,7 @@
   .chat-button button{
     width: 18vw;
     border: 2px solid black;
+    cursor: pointer;
   }
   .seller-button{
     
@@ -518,7 +520,86 @@
     border: 2px solid black;
   }
 
+/***************************8 chat*********************** */
 
+/* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  padding:10px 40px;
+  background-color: #000000;
+  color: white;
+  font-size:17px;
+  max-width:300px;
+  border-radius:2px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;  
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+position: fixed;
+  bottom: 20px; /* Adjust the distance from the bottom as needed */
+  right: 20px; /* Adjust the distance from the right as needed */
+  border: 2px solid black;
+  z-index: 9999; /* Ensure the chat box appears on top of other elements */
+ 
+}
+
+/* Add styles to the form container */
+.form-container-chat {
+  max-width: 300px;
+  padding: 10px;
+  border-radius:2px;
+  background-color: white;
+  color:#777;
+}
+
+/* Full-width textarea */
+.form-container-chat textarea {
+  width: 90%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  border-radius:2px;
+  background: #ddd;
+  resize: none;
+  min-height: 200px;
+  color:#777;
+}
+
+/* When the textarea gets focus, do something */
+.form-container-chat textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container-chat .btn {
+  background-color: #000000;
+  color: white;
+   font-size:17px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  width: 95%;
+  margin-bottom:10px;
+}
+
+/* Add a red background color to the cancel button */
+.form-container-chat .cancel {
+    color: #000000;
+    border: 2px solid black;
+  background-color: #ffffff;
+  width: 95%;
+}
+
+/* Add some hover effects to buttons */
+.form-container-chat .btn:hover, .open-button:hover {
+opacity: 0.8;
+}
   /*********************sign up modal*********************/
   .error{
     font-size: 20px;
@@ -836,7 +917,7 @@
   .preview-zone .box {
     box-shadow: none;
     border-radius: 0;
-    margin-bottom: 0;asdasd
+    margin-bottom: 0;
   }
 
 /*************************88 about us page ****************/
@@ -862,6 +943,17 @@
       text-indent: 50px;
     
   }
+  .faks{
+    margin: 30px;
+    margin-top: 10vh;
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .faks p{
+    margin-left: 40px;
+    text-indent: -40px;
+  }
+  
 /**************************** footer ***********************/
   .footer{
     width: 100%;

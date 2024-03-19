@@ -75,6 +75,7 @@
                     <ul class="dropdown-nav">
                         <li><a href="" class="user-hover-list">User</a></li>
                         <li><a href="" class="user-hover-list">Messages</a></li>
+                        <li><a href="" class="user-hover-list">Groups</a></li>
                         <li><a href="home.php" class="user-hover-list">Explore</a></li>
                         <li><a href="add.html" class="user-hover-list">Post item</a></li>
                         <li><a href="" class="user-hover-list">Saved</a></li>
